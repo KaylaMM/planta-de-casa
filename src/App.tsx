@@ -19,9 +19,7 @@ const App = () => {
         ).json();
 
         setPlants(data.data);
-        console.log(
-          data.data
-        );
+        console.log(data.data)
       };
 
     dataFetch();

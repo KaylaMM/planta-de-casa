@@ -1,0 +1,25 @@
+.plant-list_header{
+    display: flex;
+    justify-content: center;
+}
+
+.plant-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.plant-list_item{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    max-width: 400px;
+}
+
+.plant-list_img{
+    max-width: 400px;
+    max-height: 400px;
+    min-width: 100px;
+    min-height: 100px;
+}
