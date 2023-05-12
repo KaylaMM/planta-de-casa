@@ -1,18 +1,37 @@
-interface Plants {
-  data: [
-    id: number,
-    common_name: string,
-    cycle: string,
-    default_image: object
-  ];
+type Plant = {
+  id: number;
+  common_name: string;
+  cycle: string;
+  default_image: object;
+};
+
+type Plants = Array<Plant>;
+
+interface PlantListProps {
+  plants: Plants;
 }
 
-export default function PlantList(
-  plants: Plants
-) {
+const PlantList = ({
+  plants,
+}: PlantListProps) => {
   return (
-    <div>Plant List</div>
+    <div>
+      Plant List
+      <ul>
+        {plants.map(
+          (plant) => (
+            <li
+              key={plant.id}
+            >
+              {
+                plant.common_name
+              }
+            </li>
+          )
+        )}
+      </ul>
+    </div>
   );
-}
+};
 
-// "https://perenual.com/api/species-list?page=1&key=sk-dDOc645d08b22af9c865"
+export default PlantList;
