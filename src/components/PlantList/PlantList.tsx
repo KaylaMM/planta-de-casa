@@ -18,6 +18,10 @@ interface PlantListProps {
 const PlantList = ({
   plants,
 }: PlantListProps) => {
+
+const openModal = () => {
+  
+}
   return (
     <div>
       <h1 className="plant-list_header">
@@ -31,19 +35,27 @@ const PlantList = ({
               className="plant-list_item"
               key={plant.id}
             >
-              Common Name: {
+              Common Name:{" "}
+              {
                 plant.common_name
               }
               <li>
-                Cycle: {plant.cycle}
+                Cycle:{" "}
+                {plant.cycle}
               </li>
-              <img className="plant-list_img"
+              <img
+                className="plant-list_img"
+                alt="plant-img"
                 src={
                   plant
                     .default_image
-                    .small_url
+                    ?.small_url
                 }
               />
+              <button onClick={openModal}>
+                Click for
+                Details
+              </button>
             </li>
           )
         )}

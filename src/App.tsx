@@ -4,10 +4,15 @@ import {
 } from "react";
 import "./App.css";
 import PlantList from "./components/PlantList/PlantList";
+// import Modal from "./components/Modal/Modal";
+// import useModal from "./hooks/useModal";
 
 const App = () => {
   const [plants, setPlants] =
     useState([]);
+
+  // const { isOpen, toggle } =
+  //   useModal();
 
   useEffect(() => {
     const dataFetch =
@@ -19,7 +24,9 @@ const App = () => {
         ).json();
 
         setPlants(data.data);
-        console.log(data.data)
+        console.log(
+          data.data
+        );
       };
 
     dataFetch();
@@ -30,6 +37,12 @@ const App = () => {
       <PlantList
         plants={plants}
       />
+        {" "}
+        {/* <Modal
+          isOpen={isOpen}
+          toggle={toggle}
+        /> */}
+    
     </div>
   );
 };
